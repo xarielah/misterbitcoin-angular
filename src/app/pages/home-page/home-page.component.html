@@ -1,0 +1,15 @@
+<header class="home-page-header">
+    <h3>Hello {{ user.name }}!</h3>
+    <div class="icon-text-container">
+        <span class="pre-icon">
+            <img class="icon" src="assets/icons/coins.png" alt="logo" />
+        </span>
+        <p>Coins: {{ user.coins }}</p>
+    </div>
+    <div class="icon-text-container">
+        <span class="pre-icon">
+            <img class="icon" src="assets/icons/bitcoin.png" alt="logo" />
+        </span>
+        <p>BTC: {{rate$ | async}}</p>
+    </div>
+</header>

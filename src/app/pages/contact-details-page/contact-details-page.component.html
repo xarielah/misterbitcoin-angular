@@ -1,0 +1,10 @@
+<section class="contact-page" *ngIf="contact; else loading">
+    <img src="assets/icons/contact.png" class="contact-avatar" alt="contact" />
+    <p>Name: {{contact.name}}</p>
+    <p>Email: {{contact.email}}</p>
+    <p>Phone: {{contact.phone}}</p>
+</section>
+
+<ng-template #loading>
+    <h2>Loading...</h2>
+</ng-template>

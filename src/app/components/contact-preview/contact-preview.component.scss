@@ -1,0 +1,15 @@
+.contact-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.25em;
+  border-radius: 100px;
+  background-color: #eee;
+
+  .contact-avatar {
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+}

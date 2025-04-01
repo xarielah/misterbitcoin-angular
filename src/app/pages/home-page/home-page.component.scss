@@ -1,0 +1,11 @@
+.icon-text-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  .icon {
+    width: 25px;
+    height: 25px;
+    aspect-ratio: 1;
+  }
+}
