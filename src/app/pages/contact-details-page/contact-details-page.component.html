@@ -1,10 +1,9 @@
-<section class="contact-page" *ngIf="contact; else loading">
+<section class="contact-page" *ngIf="contact">
     <img src="assets/icons/contact.png" class="contact-avatar" alt="contact" />
     <p>Name: {{contact.name}}</p>
     <p>Email: {{contact.email}}</p>
     <p>Phone: {{contact.phone}}</p>
+    <a [routerLink]="['/contact/edit', contact._id]">
+        <button>Edit</button>
+    </a>
 </section>
-
-<ng-template #loading>
-    <h2>Loading...</h2>
-</ng-template>

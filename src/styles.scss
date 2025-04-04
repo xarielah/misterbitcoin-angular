@@ -2,6 +2,13 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+* {
+  font-family: Calibri, Helvetica, sans-serif;
+}
+
+.field-error {
+  color: red;
+}
 
 html,
 body,
@@ -120,4 +127,17 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding-block: 1rem;
+  margin: 0 auto;
+  max-width: 1440px;
 }

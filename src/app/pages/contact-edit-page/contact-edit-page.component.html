@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-edit-form">
+    <label for="name">
+        <span>Name:</span>
+        <input id="name" formControlName="name" type="text" placeholder="Name" />
+        <ng-container *ngIf="form.controls['name'] as name">
+            <p *ngIf="name.touched && name.invalid" class="field-error">
+                <span *ngIf="name.errors?.['required']">Name is required</span>
+                <span *ngIf="name.errors?.['minlength']">Name needs to be at least 3 characters</span>
+            </p>
+        </ng-container>
+    </label>
+    <label for="email">
+        <span>Email:</span>
+        <input id="email" formControlName="email" type="email" placeholder="Email" />
+        <ng-container *ngIf="form.controls['email'] as email">
+            <p *ngIf="email.touched && email.invalid" class="field-error">
+                <span *ngIf="email.errors?.['required']">Email is required</span>
+                <span *ngIf="email.errors?.['email']">Email is invalid</span>
+            </p>
+        </ng-container>
+    </label>
+    <label for="phone">
+        <span>Phone:</span>
+        <input id="phone" formControlName="phone" type="text" placeholder="Phone" />
+    </label>
+    <ng-container *ngIf="form.controls['phone'] as phone">
+        <p *ngIf="phone.touched && phone.invalid" class="field-error">
+            <span *ngIf="phone.errors?.['required']">Phone is required</span>
+        </p>
+    </ng-container>
+    <button [disabled]="form.invalid">{{action}}</button>
+</form>

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { take } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact/contact.service';
 
@@ -11,14 +11,14 @@ import { ContactService } from '../../services/contact/contact.service';
 })
 export class ContactDetailsPageComponent implements OnInit {
   contactService: ContactService = inject(ContactService);
+  route = inject(ActivatedRoute);
   contact!: Contact;
+  contactId: string = '';
 
   ngOnInit() {
-    this.contactService
-      .getContactById('5a56640269f443a5d64b32ca')
-      .pipe(take(1))
-      .subscribe((contact) => {
-        this.contact = contact;
-      });
+    this.route.params.subscribe((params) => (this.contactId = params['id']));
+    this.contactService.getContactById(this.contactId).subscribe((contact) => {
+      this.contact = contact;
+    });
   }
 }
